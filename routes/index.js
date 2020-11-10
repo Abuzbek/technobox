@@ -39,7 +39,6 @@ router.post('/', (req,res,next)=>{
       res.redirect('/')
     }
   })
-  
 })
 router.get('/product/:id', function(req, res, next) {
   Product.findById(req.params.id,(err,product)=>{

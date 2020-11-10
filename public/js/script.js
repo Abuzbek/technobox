@@ -1,4 +1,14 @@
+$(window).scroll(function () {
+    $scroll = $(this).scrollTop();
+    console.log($scroll);
+    if ($scroll >= 250) {
+        $('.header__top, .mob__header').addClass('fixed-top');
+    }
+    else {
+        $('.header__top, .mob__header').removeClass('fixed-top');
+    }
 
+});
 $(document).ready(function () {    
     var burger = $('.burger')
     var click = false
