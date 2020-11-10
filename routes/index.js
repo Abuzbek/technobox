@@ -41,4 +41,30 @@ router.post('/', (req,res,next)=>{
   })
   
 })
+router.get('/product/:id', function(req, res, next) {
+  Product.findById(req.params.id,(err,product)=>{
+    if (err) {
+      console.log(err);
+    } else {
+      res.render('product', {
+        title: product.name,
+        product
+      })
+    }
+  })
+  
+});
+router.get('/product/uz/:id', function(req, res, next) {
+  Product.findById(req.params.id,(err,product)=>{
+    if (err) {
+      console.log(err);
+    } else {
+      res.render('productUz', {
+        title: product.name,
+        product
+      })
+    }
+  })
+  
+});
 module.exports = router;
