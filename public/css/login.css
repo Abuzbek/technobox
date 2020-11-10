@@ -1,0 +1,105 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+.row{
+  display: flex;
+  flex-wrap: wrap;
+}
+.col-md-6{
+  width: 50%;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.col-md-6 input{
+  width: 100% !important;
+}
+body{
+  font-family: 'Montserrat';
+}
+.container{
+  max-width: 800px;
+  margin:40px auto;
+  font-family: 'Montserrat';
+}
+form{
+  padding: 15px 20px;
+}
+h3{
+  color: goldenrod;
+  font-weight: bold;
+  text-align: center;
+  font-size: 45px;
+}
+.alert-danger {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+.alert-info {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+
+}
+.alert {
+  position: relative;
+  padding: .75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  font-family: 'Montserrat';
+  font-weight: 400;
+}
+input{
+  padding: 10px 20px;
+  border: none;
+  border-bottom: 2px solid #2a2a2a;
+  color: goldenrod;
+  width: 70%;
+  display: block;
+  transition: 0.4s;
+  margin:12px auto;
+}
+input:focus{
+  border-bottom: 10px solid #2a2a2a;
+  outline: none;
+  box-shadow: none;
+}
+input::placeholder{
+  color: goldenrod;
+}
+button{
+  padding: 15px 20px;
+  background-color: goldenrod;
+  color: white;
+  border: solid 2px #2a2a2a;
+  line-height: 0;
+  display: block;
+  margin: 12px auto;
+  cursor: pointer;
+}
+label{
+  padding: 15px 20px;
+  background-color: goldenrod;
+  color: white;
+  border: solid 2px #2a2a2a;
+  line-height: 0;
+  display: block;
+  margin: 12px auto;
+  cursor: pointer;
+}
+.btn{
+  padding: 15px 20px;
+  background-color: goldenrod;
+  color: white;
+  border: solid 2px #2a2a2a;
+  line-height: 0;
+  display: block;
+  margin: 12px auto;
+  cursor: pointer;
+}

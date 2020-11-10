@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    title= title
+    link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet")
+    link(rel='stylesheet', href='/css/login.css')
+  body
+    != messages('message', locals)
+    if errors
+      each error , i in errors
+        div(class="mt-5 alert alert-dismissible fade show alert-danger" role='alert')
+          strong #{error.msg}
+    if user
+      if user.username == 'AbuzCoder'
+        nav(style="width:100%; height:70px;background:#000;") 
+          ul(style="display:flex;justify-content:flex-end;align-items:center;height:100%;")  
+            li(style="padding:15px 30px;")
+              a(href="/admin", style="color:white;") Admin honasi
+    block content
