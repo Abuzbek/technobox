@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Users = require('../model/UserAdmin')
+const Help = require('../model/Help')
 const Product = require('../model/Product')
     // ============== rasim images fayiliga yuklash jarayoni   ==============
 const upload = require('../helper/file')
@@ -73,5 +74,16 @@ router.get('/delete/:id', (req, res) => {
         }
     })
 })
-
+router.get('/usersAdmin', eA, (req,res)=>{
+    Help.find({},(err,admin)=>{
+        if (err) {
+            console.log(err);
+        } else {
+            res.render('usersAdmin',{
+                title:'Help users',
+                admin:admin
+            })
+        }
+    })
+})
 module.exports = router;

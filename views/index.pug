@@ -152,7 +152,7 @@ html(lang='en')
                   Тип хладагента: #{n.refrigerantType}
                   Обдув: #{n.Blowing}
                   Предлагаемая мощность: #{n.capacityOffered}
-            a.catalog__link.pre(href='#') Посмотреть весь каталог
+            a.catalog__link.pre(href='/catalog') Посмотреть весь каталог
       // service
       #service.service.container-fluid
         .container
@@ -377,11 +377,11 @@ html(lang='en')
                 | перезвоним вам
                 | в течении 5 минут
             .col-md-6(data-aos='fade-down')
-              form(action='')
-                input(type='text' placeholder='Имя')
-                input(type='text' placeholder='Номер телефона')
-                input(type='text' placeholder='Чем мы можем вам помочь?')
-                button Оставить заявку
+              form(action='/' , method="POST")
+                input(type='text' placeholder='Имя' name="name")
+                input(type='text' placeholder='Номер телефона' name="number")
+                input(type='text' placeholder='Чем мы можем вам помочь?' name="help")
+                button(type="submit") Оставить заявку
                 p.d-block.d-md-none
                   | Оставьте нам заявку и мы
                   | перезвоним вам

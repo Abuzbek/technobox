@@ -14,7 +14,7 @@ html(lang='en')
     // mob header
     if user
       if user.username == 'AbuzCoder'
-        nav(style="width:100%; height:70px;background:#000;") 
+        nav(style="width:100%; height:70px;background:#000;border-bottom:1px solid white;") 
           ul(style="display:flex;justify-content:flex-end;align-items:center;height:100%;")  
             li(style="padding:15px 30px;")
               a(href="/admin", style="color:white;") Admin honasi
@@ -23,7 +23,7 @@ html(lang='en')
         li
           a(href='#') О нас
         li
-          a(href='/uz/catalog') Каталог
+          a(href='/catalog/uz') Каталог
         li
           a(href='#') Наши Услуги
         li
@@ -35,7 +35,7 @@ html(lang='en')
         li
           a(href='#') Контакты и форма
         li.lang
-          a(href='/uz') UZ
+          a(href='/') Ru
       .mob__footer
         .mob__social
           a(href='#')
@@ -57,7 +57,7 @@ html(lang='en')
         ul.header__nav
           // <li><a href="#">О нас</a></li>
           li
-            a(href='/catalog') Каталог
+            a(href='/catalog/uz') Каталог
           li
             a(href='#service') Наши услуги
           li
@@ -66,7 +66,7 @@ html(lang='en')
           li
             a(href='#contact') Контакты
           li.lang
-            a(href='/uz') UZ
+            a(href='/') Ru
         i.burger.d-lg-none.fas.fa-bars
       // Carousel
       #carouselExampleInterval.carousel.slide.section.custom-full1(data-ride='carousel')
@@ -137,35 +137,22 @@ html(lang='en')
         .container
           h2.sec__title Каталог
           .row
-            .col-md-6(data-aos='fade-right')
-              img(src='img/17 (2).png' alt='')
-              h3.pre U-CROWN
-              pre.pre.
-                Тип: Invertor
-                Площадь: 40кв.м
-                Мощность: 12
-                LED-Дисплей: Есть
-                4D шторки: Есть
-                Golden Fin покрытия: Есть
-                Пульт: Есть 
-                Тип хладагента: R 410A
-                Обдув: 660 м3
-                Предлагаемая мощность: 12/18
-            .col-md-6(data-aos='fade-left')
-              img(src='img/14 (2).png' alt='')
-              h3.pre U-COOL
-              pre.pre.
-                Тип: Invertor
-                Площадь: 40кв.м
-                Мощность: 12
-                LED-Дисплей: Есть
-                4D шторки: Есть
-                Golden Fin покрытия: Есть
-                Пульт: Есть 
-                Тип хладагента: R 410A
-                Обдув: 660 м3
-                Предлагаемая мощность: 12/18
-            a.catalog__link.pre(href='#') Посмотреть весь каталог
+            each n, i in product
+              .col-md-6(data-aos='fade-down')
+                img(src=`/img/${n.img}` alt='')
+                h3.pre #{n.nameUz}
+                pre.pre.
+                  Тип: #{n.typeUz}
+                  Площадь: #{n.squareUz}
+                  Мощность: #{n.PowerUz}
+                  LED-Дисплей: #{n.displayUz}
+                  4D шторки: #{n.curtainsUz}
+                  Golden Fin покрытия: #{n.coveringsUz}
+                  Пульт:#{n.remoteUz} 
+                  Тип хладагента: #{n.refrigerantTypeUz}
+                  Обдув: #{n.BlowingUz}
+                  Предлагаемая мощность: #{n.capacityOfferedUz}
+            a.catalog__link.pre(href='/catalog/uz') Посмотреть весь каталог
       // service
       #service.service.container-fluid
         .container
@@ -390,11 +377,11 @@ html(lang='en')
                 | перезвоним вам
                 | в течении 5 минут
             .col-md-6(data-aos='fade-down')
-              form(action='')
-                input(type='text' placeholder='Имя')
-                input(type='text' placeholder='Номер телефона')
-                input(type='text' placeholder='Чем мы можем вам помочь?')
-                button Оставить заявку
+              form(action='/' , method="POST")
+                input(type='text' placeholder='Имя' name="name")
+                input(type='text' placeholder='Номер телефона' name="number")
+                input(type='text' placeholder='Чем мы можем вам помочь?' name="help")
+                button(type="submit") Оставить заявку
                 p.d-block.d-md-none
                   | Оставьте нам заявку и мы
                   | перезвоним вам

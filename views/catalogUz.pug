@@ -10,7 +10,6 @@ html(lang='en')
     link(rel='stylesheet' href='/css/style.css')
     title= title
   body
-      // mob header
     if user
       if user.username == 'AbuzCoder'
         nav(style="width:100%; height:70px;background:#000;") 
@@ -54,25 +53,25 @@ html(lang='en')
       .container
         h2.sec__title Каталог
         .row
-          .col-md-6
-            img(src='img/17 (2).png' alt='')
-            h3 U-CROWN
-            pre.
-                Тип: Invertor
-                Площадь: 40кв.м
-                Мощность: 12
-                LED-Дисплей: Есть
-                4D шторки: Есть
-                Golden Fin покрытия: Есть
-                Пульт: Есть 
-                Тип хладагента: R 410A
-                Обдув: 660 м3
-                Предлагаемая мощность: 12/18
+          each n, i in product
+              .col-md-6(data-aos='fade-down')
+                img(src=`/img/${n.img}` alt='')
+                h3.pre #{n.nameUz}
+                pre.pre.
+                  Тип: #{n.typeUz}
+                  Площадь: #{n.squareUz}
+                  Мощность: #{n.PowerUz}
+                  LED-Дисплей: #{n.displayUz}
+                  4D шторки: #{n.curtainsUz}
+                  Golden Fin покрытия: #{n.coveringsUz}
+                  Пульт:#{n.remoteUz} 
+                  Тип хладагента: #{n.refrigerantTypeUz}
+                  Обдув: #{n.BlowingUz}
+                  Предлагаемая мощность: #{n.capacityOfferedUz}
     footer
       .container-fliud
         .footer.container
           a(href='#') Copyright OOO “Technobox” 2018
-          a(href='#') Design by: Sukhrob Adilov
     script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js' integrity='sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj' crossorigin='anonymous')
     script(src='https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js' integrity='sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN' crossorigin='anonymous')
     script(src='https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js' integrity='sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s' crossorigin='anonymous')
