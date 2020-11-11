@@ -1,65 +1,69 @@
 extends layout
 
 block content
-  h1 Admin  Honasi
-  h3 Maxsulot qoshish
-  form(action="/admin", method="post" enctype="multipart/form-data")
-    .container
-      .row
-        .col-md-6
-          input(placeholder="Название" name="name" type="text")
-        .col-md-6
-          input(placeholder="Nomi" name="nameUz" type="text")
-        .col-md-6
-          input(placeholder="Тип" name="type" type="text")
-        .col-md-6
-          input(placeholder="Turi" name="typeUz" type="text")  
-        .col-md-6
-          input(placeholder="Площадь" name="square" type="text")
-        .col-md-6
-          input(placeholder="Kvadrat" name="squareUz" type="text")
-        .col-md-6
-          input(placeholder="Мощность" name="Power" type="text")
-        .col-md-6
-          input(placeholder="Quvvat" name="PowerUz" type="text")
-        .col-md-6
-          input(placeholder="LED-Дисплей" name="display" type="text")
-        .col-md-6
-          input(placeholder="LED displeyi" name="displayUz" type="text")
-        .col-md-6
-          input(placeholder="4D шторки" name="curtains" type="text")
-        .col-md-6
-          input(placeholder="4D pardalar" name="curtainsUz" type="text")
-        .col-md-6
-          input(placeholder="Golden Fin покрытия" name="coverings" type="text")
-        .col-md-6
-          input(placeholder="Oltin fin qopqog'i" name="coveringsUz" type="text")
-        .col-md-6
-          input(placeholder="Пульт" name="remote" type="text")
-        .col-md-6
-          input(placeholder="Masofadan boshqarish pulti" name="remoteUz" type="text")
-        .col-md-6
-          input(placeholder="Тип хладагента" name="refrigerantType" type="text")
-        .col-md-6
-          input(placeholder="Sovutgich turi" name="refrigerantTypeUz" type="text")
-        .col-md-6
-          input(placeholder="Обдув" name="Blowing" type="text")
-        .col-md-6
-          input(placeholder="Puflash" name="BlowingUz" type="text")
-        .col-md-6
-          input(placeholder="Предлагаемая мощность" name="capacityOffered" type="text")
-        .col-md-6
-          input(placeholder="Imkoniyatlar taqdim etildi" name="capacityOfferedUz" type="text")
-        input(type="file", name="img"  style="display:none;" id="img") 
-        label(for="img") Rasm yuklash
-    button(type="submit") Project qo'shamiz
-
-
-    .container
-          h2.sec__title Каталог
+  if user
+    if user.username === "AbuzCoder"
+      h1 Admin  Honasi
+      h3 Maxsulot qoshish
+      form(action="/admin", method="post" enctype="multipart/form-data")
+        .container
           .row
-            each n, i in product
-              .col-md-6(data-aos='fade-down')
-                img(src=`/img/${n.img}` alt='' style="max-width:100%; height:auto;")
-                h3.pre #{n.name}
-                a(href=`/delete/${n._id}` class="btn") Delete
+            .col-md-6
+              input(placeholder="Название" name="name" type="text")
+            .col-md-6
+              input(placeholder="Nomi" name="nameUz" type="text")
+            .col-md-6
+              input(placeholder="Тип" name="type" type="text")
+            .col-md-6
+              input(placeholder="Turi" name="typeUz" type="text")  
+            .col-md-6
+              input(placeholder="Площадь" name="square" type="text")
+            .col-md-6
+              input(placeholder="Kvadrat" name="squareUz" type="text")
+            .col-md-6
+              input(placeholder="Мощность" name="Power" type="text")
+            .col-md-6
+              input(placeholder="Quvvat" name="PowerUz" type="text")
+            .col-md-6
+              input(placeholder="LED-Дисплей" name="display" type="text")
+            .col-md-6
+              input(placeholder="LED displeyi" name="displayUz" type="text")
+            .col-md-6
+              input(placeholder="4D шторки" name="curtains" type="text")
+            .col-md-6
+              input(placeholder="4D pardalar" name="curtainsUz" type="text")
+            .col-md-6
+              input(placeholder="Golden Fin покрытия" name="coverings" type="text")
+            .col-md-6
+              input(placeholder="Oltin fin qopqog'i" name="coveringsUz" type="text")
+            .col-md-6
+              input(placeholder="Пульт" name="remote" type="text")
+            .col-md-6
+              input(placeholder="Masofadan boshqarish pulti" name="remoteUz" type="text")
+            .col-md-6
+              input(placeholder="Тип хладагента" name="refrigerantType" type="text")
+            .col-md-6
+              input(placeholder="Sovutgich turi" name="refrigerantTypeUz" type="text")
+            .col-md-6
+              input(placeholder="Обдув" name="Blowing" type="text")
+            .col-md-6
+              input(placeholder="Puflash" name="BlowingUz" type="text")
+            .col-md-6
+              input(placeholder="Предлагаемая мощность" name="capacityOffered" type="text")
+            .col-md-6
+              input(placeholder="Imkoniyatlar taqdim etildi" name="capacityOfferedUz" type="text")
+            input(type="file", name="img"  style="display:none;" id="img") 
+            label(for="img") Rasm yuklash
+        button(type="submit") Project qo'shamiz
+
+
+        .container
+              h2.sec__title Каталог
+              .row
+                each n, i in product
+                  .col-md-6(data-aos='fade-down')
+                    img(src=`/img/${n.img}` alt='' style="max-width:100%; height:auto;")
+                    h3.pre #{n.name}
+                    a(href=`/delete/${n._id}` class="btn") Delete
+else
+  h1(style="text-align:center;") Admin honasi faqat admin uchun ochiq
