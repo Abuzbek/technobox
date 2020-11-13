@@ -2,16 +2,24 @@ const express = require('express');
 const router = express.Router();
 const Product = require('../model/Product')
 const Help = require('../model/Help')
-
+const Carousel = require('../model/Carousel')
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   Product.find({},(err,product)=>{
     if (err) {
       console.log(err);
     } else {
-      res.render('index', {
-        title: 'Catalog',
-        product
+      Carousel.find({} , (err, carousel)=>{
+        if (err) {
+          console.log(err);
+        } else {
+          res.render('index', {
+          title: 'Catalog',
+          product: product,
+          carousel: carousel
+        })
+        }
+        
       })
     }
   }).limit(2)
@@ -22,9 +30,17 @@ router.get('/uz', function(req, res, next) {
     if (err) {
       console.log(err);
     } else {
-      res.render('indexUz', {
-        title: 'Catalog',
-        product
+      Carousel.find({} , (err, carousel)=>{
+        if (err) {
+          console.log(err);
+        } else {
+          res.render('indexUz', {
+          title: 'Catalog',
+          product: product,
+          carousel: carousel
+        })
+        }
+        
       })
     }
   }).limit(2)

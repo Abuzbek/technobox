@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  if user
+    if user.username === "AbuzCoder"
+      h1(style="text-align:center;") Admin  Honasi
+      h3 Carousel qoshamiz
+      button.btn
+        a(href="/usersAdmin" style="color:white;") Habarlar 
+      form(action="/admin/carousel", method="post" enctype="multipart/form-data")
+        .container
+          input(type="text" placeholder="Carousel name" name="name")
+          input(type="file", name="img"  style="display:none;" id="img") 
+          label(for="img" style="width:50%;") Rasm yuklash
+        button(type="submit") Carousel qoshamiz
+        .container
+              h2.sec__title Carousel
+              .row
+                each n, i in data
+                  .col-md-6(data-aos='fade-down')
+                    img(src=`/img/${n.img}` alt='' style="max-width:100%; height:auto;")
+                    h3.pre #{n.name}
+                    a(href=`/delete/carousel/${n._id}` class="btn") Delete
+  else
+    h1(style="text-align:center;") Admin honasi faqat admin uchun ochiq

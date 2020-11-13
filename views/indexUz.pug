@@ -73,25 +73,18 @@ html(lang='en')
       #carouselExampleInterval.carousel.slide.section.custom-full1(data-ride='carousel')
         .carousel-inner
           .carousel-item.active(data-interval='10000')
-            .container-fluid.carousel-1
-              .container
-                h1
-                  | TECHNOBOX - 2020 yilning eng yaxshi konditsioneri
-                a.header__btn(href='/catalog/uz') Katalogga o'ting
-          .carousel-item(data-interval='2000')
-            .container-fluid.carousel-2
-              .container
-                h1
-                  | TECHNOBOX - 2020 yilning eng yaxshi konditsioneri
-                a.header__btn(href='/catalog/uz') Katalogga o'ting
-          .carousel-item
-            .container-fluid.carousel-3
-              .container
-                h1
-                  | Kompressorlar
-                  br
-                  | GMCC 10 yillik kafolat
-                a.header__btn(href='/catalog/uz') Katalogga o'ting
+              .container-fluid.carousel-1(style=`background-image: url(/img/13112020-150552_992-3518437215560637_2d9f.jpg);`)
+                .container
+                  h1
+                    | TECHNOBOX - лучший кондиционер 2020 года
+                  a.header__btn(href='/catalog') Перейти в каталог
+          each n, i in carousel
+            .carousel-item(data-interval='10000')
+              .container-fluid.carousel-1(style=`background-image: url(/img/${n.img});`)
+                .container
+                  h1
+                    | #{n.name}
+                  a.header__btn(href='/catalog') Перейти в каталог
         a.carousel-control-prev(href='#carouselExampleInterval' role='button' data-slide='prev')
           i.fas.fa-arrow-left
         a.carousel-control-next(href='#carouselExampleInterval' role='button' data-slide='next')

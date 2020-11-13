@@ -3,6 +3,8 @@ const router = express.Router();
 const Users = require('../model/UserAdmin')
 const Help = require('../model/Help')
 const Product = require('../model/Product')
+const Carousel = require('../model/Carousel')
+
     // ============== rasim images fayiliga yuklash jarayoni   ==============
 const upload = require('../helper/file')
     // ============== rasim images fayiliga yuklash jarayoni   ==============
@@ -86,6 +88,47 @@ router.get('/usersAdmin', eA, (req,res)=>{
                 title:'Help users',
                 admin:admin
             })
+        }
+    })
+})
+router.get('/admin/carousel', eA, (req,res)=>{
+    Carousel.find({}, (err, data)=>{
+        if(err){
+            console.log(err);
+        }
+        else{
+            res.render('adminCarousel', {
+                title:'Carousel',
+                data:data
+            })
+        }
+    })
+})
+router.post('/admin/carousel', upload.single('img'), (req,res)=>{
+    try {
+        const product = new Carousel({
+            img:req.file.filename,
+            name:req.body.name
+        })
+        product.save((err, product) => {
+            if (err) {
+                console.log(err);
+            } else {
+                req.flash('info', `Carouse muaffaqiyatli qo'shildi hohlasangiz kirib ko'ring`)
+                res.redirect('/admin/carousel/')
+            }
+        })
+        console.log(req.file);
+    } catch (error) {
+        console.log(error);
+    }
+})
+router.get('/delete/carousel/:id', (req, res) => {
+    Carousel.findByIdAndDelete(req.params.id, (err) => {
+        if (err) console.log(err);
+        else {
+            req.flash('info', 'Maxsulot muaffaqiyatli ochdi')
+            res.redirect('/admin/carousel/');
         }
     })
 })

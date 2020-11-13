@@ -310,7 +310,7 @@ transition: 1s !important;
   transition: 0.5s;
   text-decoration: none; }
 .carousel-1 {
-  background: url("https://i.ibb.co/wz9Bb6k/3518437215560637-2d9f.jpg");
+  background-image: url("https://i.ibb.co/wz9Bb6k/3518437215560637-2d9f.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -324,7 +324,6 @@ transition: 1s !important;
   height: 100vh; }
 
 .carousel-3 {
-  background: url("https://i.ibb.co/NjCvZhS/thiet-ke-tich-hop.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: cente;
