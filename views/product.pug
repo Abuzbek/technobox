@@ -40,7 +40,7 @@ html(lang='en')
     // header
     header
       .header__top.container-fluid
-        a.logo(href='index.html')
+        a.logo(href='/')
           img(src="/img/tech.png", alt="" style="width:100px;")
         ul.header__nav
           li
@@ -50,23 +50,50 @@ html(lang='en')
             a(href='/product/uz/'+product._id) UZ
         i.burger.d-lg-none.fas.fa-bars
     // catalog
-    .catalog.container-fluid.catalog-page
+    .catalog.container-fluid.catalog-page(style="background:black;")
       .container
-        h2.sec__title Каталог
-          img(src=`/img/${product.img}` alt='')
-          h3.pre #{product.name}
-          pre.pre.
-            Тип: #{product.type}
-            Площадь: #{product.square}
-            Мощность: #{product.Power}
-            LED-Дисплей: #{product.display}
-            4D шторки: #{product.curtains}
-            Golden Fin покрытия: #{product.coverings}
-            Пульт:#{product.remote} 
-            Тип хладагента: #{product.refrigerantType}
-            Обдув: #{product.Blowing}
-            Предлагаемая мощность: #{product.capacityOffered}
-          a(href=`/catalog` class="btn btn-secondary my-4")  BACK  
+        .card.text-center(style="background:transparent;")
+          .card-img
+            img(src=`/img/${product.img}`, alt="" style="max-width:100%; height:auto;width:auto;")
+          .card-body
+            h3.card-title #{product.name}
+            .row
+              .col-md-6
+                p.text-white.text-left(style="font-size: 30px;")
+                  if product.type
+                   | Тип: #{product.type}
+                   br
+                  if product.square
+                   | Площадь: #{product.square}
+                   br
+                  if product.Power
+                   | Мощность: #{product.Power}
+                   br
+                  if product.display
+                    | LED-Дисплей: #{product.display}
+                    br
+                  if product.curtains
+                    | 4D шторки: #{product.curtains}
+                    br
+                  if product.coverings
+                    | Golden Fin покрытия: #{product.coverings}
+                    br
+                  if product.remote
+                    | Пульт: #{product.remote}
+                    br
+                  if product.refrigerantType
+                    | Тип хладагента: #{product.refrigerantType}
+                    br
+                  if product.Blowing
+                    | Обдув: #{product.Blowing}
+                    br
+                  if product.capacityOffered
+                    | Предлагаемая мощность: #{product.capacityOffered}
+                    br
+              .col-md-6
+                p.text-white.text-left.
+                  #{product.message}
+          a(href=`/catalog` style="background: #D1A56B;font-size: 25px;font-weight: 700;color: black;transition: 0.5s;padding: 10px 15px;border: none; display:inline-block;text-decaration:none; width:115px; margin:15px auto;")  Hазад 
     footer
       .container-fliud
         .footer.container

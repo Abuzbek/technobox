@@ -5,6 +5,8 @@ block content
   h3 Maxsulot qoshish
   form(action="/admin", method="post" enctype="multipart/form-data")
     .container
+      .col(style="width:50%; margin:auto;")
+        input(placeholder="Bahalang 1dan 10gacha" name="name" type="text")
       .row
         .col-md-6
           input(placeholder="Название" name="name" type="text")
@@ -50,6 +52,12 @@ block content
           input(placeholder="Предлагаемая мощность" name="capacityOffered" type="text")
         .col-md-6
           input(placeholder="Imkoniyatlar taqdim etildi" name="capacityOfferedUz" type="text")
+        .col(style="width:100%")
+          label.textarea(for="mess") Productning hususiyati
+          textarea(name="messageUz", cols="30", rows="10" id="mess")  
+        .col(style="width:100%")
+          label.textarea(for="mess1") Производственные особенности продукции
+          textarea(name="message", cols="30", rows="10" id="mess1")    
         input(type="file", name="img"  style="display:none;" id="img") 
         label(for="img") Rasm yuklash
     button(type="submit") Project qo'shamiz

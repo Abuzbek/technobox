@@ -38,7 +38,17 @@
 .logo:hover {
   text-decoration: none;
   color: white; }
-
+  .progress.md-progress {
+    width: 105px !important;
+    background: transparent; }
+    .progress.md-progress .gradientOverflow {
+      justify-content: flex-start;
+      flex-direction: row;
+      align-items: center;
+      background: transparent !important; }
+      .progress.md-progress .gradientOverflow .Textgradient {
+        font-size: 18px;
+        color: #ffd900; }
 @media (max-width: 992px) {
   .sec__title {
     font-size: 32px; } }
@@ -298,25 +308,23 @@ transition: 1s !important;
 .header__btn:hover {
   color: #ffffff;
   transition: 0.5s;
-
   text-decoration: none; }
-
 .carousel-1 {
-  background: url("https://img2.goodfon.ru/original/1280x1024/a/ad/minimalizm-vazy-krovat.jpg");
+  background: url("https://i.ibb.co/wz9Bb6k/3518437215560637-2d9f.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   height: 100vh; }
 
 .carousel-2 {
-  background: url("https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77701699411.jpg");
+  background: url("https://i.ibb.co/MBJ43b7/samsung-ar09mspxbwkner-review-images-961864956.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   height: 100vh; }
 
 .carousel-3 {
-  background: url("https://i0.wp.com/justinterior.ru/wp-content/uploads/2018/12/Fistashkovyiy-tsvet-v-interere-30-1024x576.jpg");
+  background: url("https://i.ibb.co/NjCvZhS/thiet-ke-tich-hop.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: cente;

@@ -65,6 +65,15 @@ input{
   transition: 0.4s;
   margin:12px auto;
 }
+textarea{
+  padding: 10px 20px;
+  border: 2px solid #2a2a2a;
+  color: goldenrod;
+  width: 100%;
+  display: block;
+  transition: 0.4s;
+  margin:12px auto;
+}
 input:focus{
   border-bottom: 10px solid #2a2a2a;
   outline: none;
@@ -92,6 +101,11 @@ label{
   display: block;
   margin: 12px auto;
   cursor: pointer;
+}
+.textarea{
+  background-color: transparent;
+  color: #2a2a2a;
+  border: solid 2px transparent;
 }
 .btn{
   padding: 15px 20px;

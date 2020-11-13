@@ -20,9 +20,9 @@ html(lang='en')
       ul
         li
           a(href='/') 
-           | Домашня страница
+           | Bosh sahifa
         li.lang
-          a(href='#') UZ
+          a(href='/product/uz/'+product._id) Ru
       .mob__footer
         .mob__social
           a(href='#')
@@ -37,36 +37,63 @@ html(lang='en')
         .mob__contact
           a(href='tel:+998 93 809 00 53') +998 93 809 00 53
           a(href='tel:+998 90 176 36 00') +998 90 176 36 00
-    // header
+    // headerTuri
     header
       .header__top.container-fluid
-        a.logo(href='index.html')
+        a.logo(href='/')
           img(src="/img/tech.png", alt="" style="width:100px;")
         ul.header__nav
           li
             a(href='/')
-             | Домашня страница
+             | Bosh sahifa
           li.lang
-            a(href='#') UZ
+            a(href='/product'+product._id) Ru
         i.burger.d-lg-none.fas.fa-bars
     // catalog
-    .catalog.container-fluid.catalog-page
+    .catalog.container-fluid.catalog-page(style="background:black;")
       .container
-        h2.sec__title Каталог
-          img(src=`/img/${product.img}` alt='')
-          h3.pre #{product.nameUz}
-          pre.pre.
-            Тип: #{product.typeUz}
-            Площадь: #{product.squareUz}
-            Мощность: #{product.PowerUz}
-            LED-Дисплей: #{product.displayUz}
-            4D шторки: #{product.curtainsUz}
-            Golden Fin покрытия: #{product.coveringsUz}
-            Пульт:#{product.remoteUz} 
-            Тип хладагента: #{product.refrigerantTypeUz}
-            Обдув: #{product.BlowingUz}
-            Предлагаемая мощность: #{product.capacityOfferedUz}
-          a(href=`/catalog` class="btn btn-secondary my-4")  BACK  
+        .card.text-center(style="background:transparent;")
+          .card-img
+            img(src=`/img/${product.img}`, alt="" style="max-width:100%; height:auto;width:auto;")
+          .card-body
+            h3.card-title #{product.name}
+            .row
+              .col-md-6
+                p.text-white.text-left(style="font-size: 30px;")
+                  if product.typeUz
+                   | Turi: #{product.typeUz}
+                   br
+                  if product.squareUz
+                   | Kvadrat: #{product.squareUz}
+                   br
+                  if product.PowerUz
+                   | Quvvat: #{product.PowerUz}
+                   br
+                  if product.displayUz
+                    | LED displeyi: #{product.displayUz}
+                    br
+                  if product.curtainsUz
+                    | 4D pardalar: #{product.curtainsUz}
+                    br
+                  if product.coveringsUz
+                    | Oltin fin qopqog'i: #{product.coveringsUz}
+                    br
+                  if product.remoteUz
+                    | Masofadan boshqarish pulti: #{product.remoteUz}
+                    br
+                  if product.refrigerantTypeUz
+                    | Sovutgich turi: #{product.refrigerantTypeUz}
+                    br
+                  if product.BlowingUz
+                    | Puflash: #{product.BlowingUz}
+                    br
+                  if product.capacityOfferedUz
+                    | Imkoniyatlar taqdim etildi: #{product.capacityOfferedUz}
+                    br
+              .col-md-6
+                p.text-white.text-left.
+                  #{product.message}
+          a(href=`/catalog` style="background: #D1A56B;font-size: 25px;font-weight: 700;color: black;transition: 0.5s;padding: 10px 15px;border: none; display:inline-block;text-decaration:none; width:130px; margin:15px auto;")  Orqaga 
     footer
       .container-fliud
         .footer.container

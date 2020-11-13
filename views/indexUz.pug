@@ -21,19 +21,19 @@ html(lang='en')
     .mob__header
       ul
         li
-          a(href='#') О нас
+          a(href='#') Biz haqimizda
         li
-          a(href='/catalog/uz') Каталог
+          a(href='/catalog/uz') Katalog
         li
-          a(href='#') Наши Услуги
+          a(href='#') Bizning xizmatlarimiz
         li
-          a(href='#') Партнеры
+          a(href='#') Hamkorlar
         li
-          a(href='#') Преимущества
+          a(href='#') Foyda
         li
-          a(href='#') Отзывы
+          a(href='#') Sharhlar
         li
-          a(href='#') Контакты и форма
+          a(href='#') Kontaktlar 
         li.lang
           a(href='/') Ru
       .mob__footer
@@ -53,19 +53,19 @@ html(lang='en')
     // header
     header
       .header__top.container-fluid
-        a.logo(href='index.html') 
+        a.logo(href='/') 
           img(src="/img/tech.png", alt="" style="width:100px;")
         ul.header__nav
           // <li><a href="#">О нас</a></li>
           li
-            a(href='/catalog/uz') Каталог
+            a(href='/catalog/uz') Katalog
           li
-            a(href='#service') Наши услуги
+            a(href='#service') Bizning xizmatlarimiz
           li
-            a(href='#partner') Наши партнеры
+            a(href='#partner') Hamkorlar
           // <li><a href="#">Преимущества</a></li>
           li
-            a(href='#contact') Контакты
+            a(href='#contact') Kontaktlar 
           li.lang
             a(href='/') Ru
         i.burger.d-lg-none.fas.fa-bars
@@ -76,23 +76,22 @@ html(lang='en')
             .container-fluid.carousel-1
               .container
                 h1
-                  | TECHNOBOX - лучший кондиционер
-                  | 2020 года
-                a.header__btn(href='/catalog/uz') Перейти в каталог
+                  | TECHNOBOX - 2020 yilning eng yaxshi konditsioneri
+                a.header__btn(href='/catalog/uz') Katalogga o'ting
           .carousel-item(data-interval='2000')
             .container-fluid.carousel-2
               .container
                 h1
-                  | TECHNOBOX - лучший кондиционер
-                  | 2020 года
-                a.header__btn(href='/catalog/uz') Перейти в каталог
+                  | TECHNOBOX - 2020 yilning eng yaxshi konditsioneri
+                a.header__btn(href='/catalog/uz') Katalogga o'ting
           .carousel-item
             .container-fluid.carousel-3
               .container
                 h1
-                  | TECHNOBOX - лучший кондиционер
-                  | 2020 года
-                a.header__btn(href='/catalog/uz') Перейти в каталог
+                  | Kompressorlar
+                  br
+                  | GMCC 10 yillik kafolat
+                a.header__btn(href='/catalog/uz') Katalogga o'ting
         a.carousel-control-prev(href='#carouselExampleInterval' role='button' data-slide='prev')
           i.fas.fa-arrow-left
         a.carousel-control-next(href='#carouselExampleInterval' role='button' data-slide='next')
@@ -102,90 +101,93 @@ html(lang='en')
       // techBoxInNums
       .innums.caontainer-fluid
         .container
-          h2.sec__title TechnoBox в цифрах
+          h2.sec__title TechnoBox raqamlarda
           .innums__div(data-aos='fade-in')
             .row
               .col-8
-                p Гарантия на компрессор
+                p Kompressor kafolati
               .col-4.innums__left
                 span.num 120
-                p месяцев
+                p Oy
           .innums__div(data-aos='fade-up')
             .row
               .col-8
-                p Гарантия на кондиционер
+                p Konditsionerning kafolati
               .col-4.innums__left
                 span.num(pan='') 36
-                p месяцев
+                p Oy
           .innums__div(data-aos='fade-up')
             .row
               .col-8
-                p Установлено кондиционеров
+                p O'rnatilgan konditsionerlar
               .col-4.innums__left
                 .d-flex
                   span +
                   span.num 3500
-                p шт
+                p dona
           .innums__div(data-aos='fade-up')
             .row
               .col-8
-                p Опыт в сфере кондиционеров
+                p Konditsionerlik tajribasi
               .col-4.innums__left
                 span.num(pan='') 15
-                p лет
+                p yil
       // catalog
       .catalog.container-fluid
         .container
-          h2.sec__title Каталог
+          h2.sec__title Katalog
           .row
             each n, i in product
               .col-md-6(data-aos='fade-down')
-                img(src=`/img/${n.img}` alt='')
-                h3.pre #{n.nameUz}
-                pre.pre.
-                  Тип: #{n.typeUz}
-                  Площадь: #{n.squareUz}
-                  Мощность: #{n.PowerUz}
-                  LED-Дисплей: #{n.displayUz}
-                  4D шторки: #{n.curtainsUz}
-                  Golden Fin покрытия: #{n.coveringsUz}
-                  Пульт:#{n.remoteUz} 
-                  Тип хладагента: #{n.refrigerantTypeUz}
-                  Обдув: #{n.BlowingUz}
-                  Предлагаемая мощность: #{n.capacityOfferedUz}
-            a.catalog__link.pre(href='/catalog/uz') Посмотреть весь каталог
+                .row
+                  .col-md-8.m-auto
+                    .card.my-3
+                      .card-img(style="height:300px;")
+                        img.card-img-top(src=`/img/${n.img}` alt='Card image cap')
+                      .card-body
+                        h3.card-title #{n.name}
+                        .progress.md-progress(style='height: 30px;')
+                          .progress-bar.progress-bar-striped.gradientOverflow(role='progressbar', style=`width:${n.imb_score}0%;height: 30px`,
+                          aria-valuenow=`${n.imb_score}0`, aria-valuemin='0', aria-valuemax='100') 
+                            i.fas.fa-star.Textgradient
+                            i.fas.fa-star.Textgradient
+                            i.fas.fa-star.Textgradient
+                            i.fas.fa-star.Textgradient
+                            i.fas.fa-star.Textgradient
+                      ul.list-group.list-group-flush
+                        li.list-group-item Turi: #{n.typeUz}
+                        li.list-group-item Kvadrat: #{n.squareUz}
+                        li.list-group-item Quvvat: #{n.PowerUz}
+            a.catalog__link.pre(href='/catalog') Butun katalogni ko'rish
       // service
       #service.service.container-fluid
         .container
-          .sec__title.service-title Наши услуги
+          .sec__title.service-title Bizning xizmatlarimiz
           .service__div(data-aos='fade-up')
             h3 1
             .service__text
-              h4 Проектирование систем вентиляции
+              h4 Shamollatish tizimlarini loyihalash
               p
-                | Это самый первый и важный этап. Сделаем все настолько профессионально и качественно, чтобы
-                | охлажденный воздух обдувал вас на все 100%.
+                | Bu birinchi va eng muhim bosqich. Biz hamma narsani shunchalik professional va samarali bajaramizki, sovutilgan havo sizning ustingizdan 100% zarbaga uchrasin.
           .service__div(data-aos='fade-up')
             h3 2
             .service__text
-              h4 Монтаж вентиляции в Ташкенте
+              h4 Toshkentda ventilyatsiya o'rnatish
               p
-                | После расчётов мы займемся установкой воздуховодов, так чтобы воздух эффективно циркулировал
-                | внутри помещения, а пыль и грязь — оставались снаружи.
+                | Hisob-kitoblardan so'ng biz havo kanallarini o'rnatamiz, shunda havo samarali aylanadi xona ichida, chang va axloqsizlik tashqarida qoldi.
           .service__div(data-aos='fade-up')
             h3 3
             .service__text
-              h4 Техническое обслуживание систем вентиляции
+              h4 Shamollatish tizimlariga texnik xizmat ko'rsatish
               p
-                | Система вентиляции работает нестабильно? Необходимо почистить вентиляцию? Мы уже летим к вам
-                | на помощь!
+                | Shamollatish tizimi beqarormi? Shamollatishni tozalash kerakmi? Biz allaqachon siz tomon uchmoqdamiz yordam uchun!
                 br
-                |                             Мы приедем к вам и продиагностируем, разберемся, что не так и всё хорошенько прочистим.
-                |                             Дышать станет спокойнее и свежее. Ликвидируем даже самую маленькую пылинку
+                | Biz sizning oldingizga kelib tashxis qo'yamiz, nima yomonligini aniqlaymiz va hamma narsani yaxshilab tozalaymiz.
+                | Nafas olish tinch va tetikroq bo'ladi. Biz eng kichik changni ham yo'q qilamiz
       // partner
       #partner.partner.container-fluid
         .container
-          .partner-title.sec__title Нам доверяют
+          .partner-title.sec__title Ular bizga ishonishadi
           .row(data-aos='fade-up')
             .col-3
               svg(width='100%' height='auto' viewBox='0 0 171 222' fill='none' xmlns='http://www.w3.org/2000/svg')
@@ -370,50 +372,46 @@ html(lang='en')
       // request
       .request.container-fluid
         .container
-          .request-title.sec__title Оставить заявку
+          .request-title.sec__title Arizangizni yuboring
           .row
             .col-md-6.d-none.d-md-block(data-aos='fade-down')
               h3
-                | Оставьте нам заявку и мы
-                | перезвоним вам
-                | в течении 5 минут
+                | Bizga so'rov qoldiring va biz sizni qayta chaqiring 5 daqiqa ichida
             .col-md-6(data-aos='fade-down')
               form(action='/' , method="POST")
-                input(type='text' placeholder='Имя' name="name")
-                input(type='text' placeholder='Номер телефона' name="number")
-                input(type='text' placeholder='Чем мы можем вам помочь?' name="help")
-                button(type="submit") Оставить заявку
+                input(type='text' placeholder='Ismingiz' name="name")
+                input(type='text' placeholder='Telefon raqamingiz' name="number")
+                input(type='text' placeholder='Sizga qanday yordam beramiz?' name="help")
+                button(type="submit") Arizangizni yuboring
                 p.d-block.d-md-none
-                  | Оставьте нам заявку и мы
-                  | перезвоним вам
-                  | в течении 5 минут
+                  | Bizga so'rov qoldiring va biz sizni qayta chaqiring 5 daqiqa ichida
       section.relative            
         // contact
         #contact.container-fluid.contact
           .container.ml-5
-            .sec__title.contactText Контакты
+            .sec__title.contactText Kontaktlar
             .contact__text ООО “ TechnoBox”
             .contact__info
               .row
                 .col-12.contact__adr
                   i.fas.fa-map-marker-alt
                   div
-                    span Адрес
+                    span Adress
                     p
-                      | г. Ташкент, Чиланзарский р-н 
+                      | Toshkent shaxar Chilonzor tumani
                       br
-                      | улица Бунёдкор, 14
+                      | Bunyotkor ko'chasi 14
                 .col-12
                   .contact__tel
                     i.fas.fa-phone-alt
                     div
-                      span Телефон
+                      span Telefon
                       br
                       a(href='tel:+998 93 809 00 53') +998 93 809 00 53
                       br
                       a(href='tel:+998 90 176 36 00') +998 90 176 36 00
                 .col-12.contact__social
-                  span Мы в социальных сетях
+                  span Biz ijtimoiy tarmoqlarda
                   .social__links
                     a(href='#')
                       i.fab.fa-telegram
@@ -423,9 +421,9 @@ html(lang='en')
                       i.fab.fa-instagram
         .contact__map
           div(style='position:relative;overflow:hidden;')
-            a(href='https://yandex.uz/maps/10335/tashkent/?utm_medium=mapframe&utm_source=maps' style='color:#eee;font-size:12px;position:absolute;top:0px;') Ташкент
+            a(href='https://yandex.uz/maps/10335/tashkent/?utm_medium=mapframe&utm_source=maps' style='color:#eee;font-size:12px;position:absolute;top:0px;') Toshkent
             a(href='https://yandex.uz/maps/10335/tashkent/house/YkAYdAVhTUQPQFprfX54cHhiZQ==/?ll=69.221418%2C41.291411&utm_medium=mapframe&utm_source=maps&z=17.17' style='color:#eee;font-size:12px;position:absolute;top:14px;')
-              | Проспект Бунёдкор, 14 —
+              | Bunyodkor shoh ko'chasi, 14
               | Яндекс.Карты
             iframe(src='https://yandex.uz/map-widget/v1/-/CCUA4JUo1D' width='100%' height='651px' frameborder='1' allowfullscreen='true' style='position:relative;')
     footer

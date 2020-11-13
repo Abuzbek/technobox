@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 const Product  = Schema({
   img: String,
+  imb_score: String,
   name:String,
   type: String,
   square: String,

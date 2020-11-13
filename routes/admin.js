@@ -29,6 +29,9 @@ router.post('/admin', upload.single('img'), (req, res, next) => {
         const product = new Product({
             img:req.file.filename,
             name:req.body.name,
+            imb_score:req.body.imb_score,
+            message:req.body.imb_score,
+            messageUz:req.body.imb_score,
             type:req.body.type,
             square:req.body.square,
             Power:req.body.Power,

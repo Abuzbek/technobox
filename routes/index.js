@@ -62,6 +62,7 @@ router.get('/product/uz/:id', function(req, res, next) {
         title: product.name,
         product
       })
+      console.log(product);
     }
   })
   
