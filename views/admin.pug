@@ -63,11 +63,13 @@ block content
     button(type="submit") Project qo'shamiz
 
 
-    .container
-          h2.sec__title Каталог
-          .row
-            each n, i in product
-              .col-md-6(data-aos='fade-down')
-                img(src=`/img/${n.img}` alt='' style="max-width:100%; height:auto;")
-                h3.pre #{n.name}
-                a(href=`/delete/${n._id}` class="btn") Delete
+        .container
+              h2.sec__title Каталог
+              .row
+                each n, i in product
+                  .col-md-6(data-aos='fade-down')
+                    img(src=`/img/${n.img}` alt='' style="max-width:100%; height:auto;")
+                    h3.pre #{n.name}
+                    a(href=`/delete/${n._id}` class="btn") Delete
+  else
+    h1(style="text-align:center;") Admin honasi faqat admin uchun ochiq
