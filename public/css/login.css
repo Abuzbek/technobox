@@ -102,6 +102,11 @@ label{
   margin: 12px auto;
   cursor: pointer;
 }
+.label{
+  background-color: transparent;
+  border: solid 2px transparent;
+  color: black;
+}
 .textarea{
   background-color: transparent;
   color: #2a2a2a;

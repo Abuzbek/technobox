@@ -7,5 +7,5 @@ block content
         each n, i in admin
           .col-md-6(style="color: #155724;background-color: #d4edda;padding: .75rem 1.25rem;margin: 1rem; border-radius: .25rem;")
               h4= n.name 
-              a(href=`tel`+n.phone style="color: #155724;")= n.phone 
+              a(href=`tel:${n.number}` style="color: #155724;")= n.number 
               h4= n.help  

@@ -12,6 +12,7 @@ block content
       form(action="/admin", method="post" enctype="multipart/form-data")
         .container
           .row
+            input(placeholder="Score" name="imb_score" type="text")
             .col-md-6
               input(placeholder="Название" name="name" type="text")
             .col-md-6
@@ -56,6 +57,10 @@ block content
               input(placeholder="Предлагаемая мощность" name="capacityOffered" type="text")
             .col-md-6
               input(placeholder="Imkoniyatlar taqdim etildi" name="capacityOfferedUz" type="text")
+            label(for="text").label Message Product
+            textarea(name="message", id="text" cols="30", rows="10" )
+            label(for="textUz").label Message Product Uz...
+            textarea(name="messageUz",id="textUz"  cols="30", rows="10" ) 
             input(type="file", name="img"  style="display:none;" id="img") 
             label(for="img") Rasm yuklash
         button(type="submit") Project qo'shamiz

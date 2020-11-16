@@ -25,5 +25,7 @@ const Product  = Schema({
   refrigerantTypeUz: String,
   BlowingUz: String,
   capacityOfferedUz: String,
+  message: String,
+  messageUz: String
 })
 module.exports = mongoose.model('product', Product)
