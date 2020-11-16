@@ -543,7 +543,7 @@ margin-right:15px;}
           justify-content: space-between; }
 
 .service__div h3 {
-  font-size: 200px;
+  font-size: 150px;
   font-weight: 900;
   color: black;
   -webkit-text-stroke: 10px #D1A56B; }
@@ -552,14 +552,14 @@ margin-right:15px;}
   width: 85%; }
 
 .service__text h4 {
-  font-size: 36px;
+  font-size: 30px;
   font-weight: 700;
   color: white;
   padding-bottom: 50px; }
 
 .service__text p {
-  font-size: 30px;
-  line-height: 37px;
+  font-size: 20px;
+  line-height: 26px;
   color: white; }
 
 @media (max-width: 992px) {
@@ -615,7 +615,7 @@ margin-right:15px;}
     line-height: 20px; } }
 
 .partner {
-  padding: 100px 155px; }
+  padding: 100px 220px; }
 
 .partner-title {
   margin-bottom: 100px; }
@@ -648,9 +648,9 @@ margin-right:15px;}
   margin-bottom: 100px; }
 
 .request h3 {
-  font-size: 70px;
+  font-size: 50px;
   font-weight: 700;
-  line-height: 85px;
+  line-height: 80px;
   color: black;
   -webkit-text-stroke: 1px white; }
 

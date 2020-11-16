@@ -72,7 +72,7 @@ html(lang='en')
       #carouselExampleInterval.carousel.slide.section.custom-full1(data-ride='carousel')
         .carousel-inner
           .carousel-item.active(data-interval='10000')
-              .container-fluid.carousel-1(style=`background-image: url(/img/13112020-150552_992-3518437215560637_2d9f.jpg);`)
+              .container-fluid.carousel-1(style=`background-image: url('https://i.pinimg.com/originals/b5/47/9f/b5479f1ff2013bbadf601ea9de94e550.jpg');`)
                 .container
                   h1
                     | TECHNOBOX - лучший кондиционер 2020 года
@@ -133,8 +133,8 @@ html(lang='en')
               .col-md-6(data-aos='fade-down')
                 .row
                   .col-md-8.m-auto
-                    .card.my-3
-                      .card-img(style="height:300px;")
+                    .card.my-3(style=" border:none; box-shadow:none;")
+                      .card-img(style="height:300px; border:none; box-shadow:none;")
                         img.card-img-top(src=`/img/${n.img}` alt='Card image cap')
                       .card-body(style="margin-top:40px;")
                         h3.card-title #{n.name}
@@ -146,10 +146,10 @@ html(lang='en')
                             i.fas.fa-star.Textgradient
                             i.fas.fa-star.Textgradient
                             i.fas.fa-star.Textgradient
-                      ul.list-group.list-group-flush
-                        li.list-group-item Turi: #{n.typeUz}
-                        li.list-group-item Kvadrat: #{n.squareUz}
-                        li.list-group-item Quvvat: #{n.PowerUz}
+                      ul.list-group.list-group-flush(style="border:none;")
+                        li.list-group-item(style="border:none;") Turi: #{n.typeUz}
+                        li.list-group-item(style="border:none;") Kvadrat: #{n.squareUz}
+                        li.list-group-item(style="border:none;") Quvvat: #{n.PowerUz}
             a.catalog__link.pre(href='/catalog' style='  background: #D1A56B;font-size: 25px;font-weight: 700;color: black;transition: 0.5s;padding: 20px 30px;border: none;text-align:center;margin:15px auto;text-decoration:none;') Butun katalogni ko'rish
       // service
       #service.service.container-fluid
